@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>SSHPro Changelog</title>
+    <link>https://yhqxit.github.io/SSHPro-Releases/appcast.xml</link>
+    <description>SSHPro 版本更新</description>
+    <language>zh-CN</language>
+    <item>
+      <title>SSHPro 2.4.6</title>
+      <sparkle:version>2.4.6</sparkle:version>
+      <sparkle:shortVersionString>2.4.6</sparkle:shortVersionString>
+      <pubDate>Wed, 11 Nov 2026 03:45:25 GMT</pubDate>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://yhqxit.github.io/SSHPro-Releases/dmgs/SSHPro-2.4.6.dmg" type="application/octet-stream" length="5630712" sparkle:edSignature="Y971CGVKFpH/E+XxOENu94ODxtMUmYvcqMAJQjAvuaLV/Okpv4fl8AzrRubkJFkaIcWT9F8SFfVY+lqWatmlAQ==" />
+    </item>
+  </channel>
+</rss>
