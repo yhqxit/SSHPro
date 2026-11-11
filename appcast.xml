@@ -9,9 +9,17 @@
       <title>SSHPro 2.4.6</title>
       <sparkle:version>2.4.6</sparkle:version>
       <sparkle:shortVersionString>2.4.6</sparkle:shortVersionString>
-      <pubDate>Wed, 11 Nov 2026 03:45:25 GMT</pubDate>
+      <pubDate>Wed, 11 Nov 2026 03:57:31 GMT</pubDate>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://yhqxit.github.io/SSHPro-Releases/dmgs/SSHPro-2.4.6.dmg" type="application/octet-stream" length="5630712" sparkle:edSignature="Y971CGVKFpH/E+XxOENu94ODxtMUmYvcqMAJQjAvuaLV/Okpv4fl8AzrRubkJFkaIcWT9F8SFfVY+lqWatmlAQ==" />
+      <enclosure url="https://yhqxit.github.io/SSHPro-Releases/dmgs/SSHPro-2.4.6.dmg" type="application/octet-stream" length="5630712" sparkle:edSignature="RhoayE/LfQKZraIScxMqILs56BuyYS03G+IHC+KC43cVLrGmTp1nrOQkVeV9iobrj5WKrp7YOwfQQRDo48CnAA==" />
+    </item>
+    <item>
+      <title>SSHPro 2.4.5</title>
+      <sparkle:version>2.4.5</sparkle:version>
+      <sparkle:shortVersionString>2.4.5</sparkle:shortVersionString>
+      <pubDate>Wed, 11 Nov 2026 03:57:31 GMT</pubDate>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://yhqxit.github.io/SSHPro-Releases/dmgs/SSHPro-2.4.5.dmg" type="application/octet-stream" length="5561198" sparkle:edSignature="Fvoo6RDqv4Eqt+xe9JOVakQ6afxzH2bbClgIYzn6nYrUQlfmZ5y8iVvzkBka64eVfcrOSzcBq+YQWAznh7BPCw==" />
     </item>
   </channel>
 </rss>
