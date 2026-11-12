@@ -38,6 +38,12 @@
   summary { font-weight: 600; cursor: pointer; }
   code { background: #f0f1f3; padding: 2px 6px; border-radius: 5px; font-size: 13px; font-family: ui-monospace, Menlo, monospace; }
   footer { margin-top: 48px; color: var(--sub); font-size: 13px; text-align: center; }
+  .release-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin-top: 22px; }
+  .release-card h2 { margin: 0 0 10px; }
+  .release-card .meta { color: var(--sub); font-size: 13px; }
+  .release-card ul { margin: 10px 0 10px 20px; font-size: 14px; }
+  .release-card li { margin-bottom: 6px; }
+  .release-card a { color: #0d8a68; }
 </style>
 </head>
 <body>
@@ -63,11 +69,20 @@
 <div class="download-card">
   <div>
     <b>先试用，再决定 · 免费下载</b>
-    <p class="meta">SSHPro <span id="dmg-version">2.4.10</span> · macOS 14+ / Apple Silicon (arm64) · <span id="dmg-size">6.6 MB</span> · 15 天全功能试用，无需注册</p>
-    <p class="verify">SHA256 <code id="sha256">cff982edd55d558ec4da2f946adb249278070cac4c780a2cae61aa7f3298726e</code> · MD5 <code id="md5">0f2162bebe1c586b282e54f77eaae7e4</code> · <a href="checksums.txt">checksums.txt</a></p>
+    <p class="meta">SSHPro <span id="dmg-version">2.4.11</span> · macOS 14+ / Apple Silicon (arm64) · <span id="dmg-size">6.6 MB</span> · 15 天全功能试用，无需注册</p>
+    <p class="verify">SHA256 <code id="sha256">67bceaf20a1f785b5a46e884f4db171ee3277bf12fb72612fa46969fee99d414</code> · MD5 <code id="md5">de469d53734146ec91562a5b7eac0c09</code> · <a href="checksums.txt">checksums.txt</a></p>
   </div>
-  <a id="download-btn" class="btn" href="https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.10.dmg">下载 DMG</a>
+  <a id="download-btn" class="btn" href="https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.11.dmg">下载 DMG</a>
 </div>
+
+<section class="release-card">
+  <h2>当前版本与更新记录</h2>
+  <p class="meta">当前版本 <b id="current-version">2.4.11</b> · 发布于 <span id="release-date">2026-11-12</span> · <a href="version.json">version.json</a>（供 App 自动检查更新）</p>
+  <div id="release-notes">
+    <ul id="notes-fallback"><li>新增「检查更新」：启动后自动检测新版本，也可在「帮助 → 检查更新...」手动触发</li><li>发现新版本可一键下载 DMG，或选择「稍后」「跳过此版本」；升级不影响已激活的 License</li><li>购买页新增「当前版本与更新记录」区块，并公示机器可读的 version.json</li></ul>
+  </div>
+  <p class="meta">已安装 SSHPro 的用户：App 启动后会自动提示新版本，也可在「帮助 → 检查更新...」手动查看。升级时把新 DMG 里的 SSHPro 拖入「应用程序」覆盖即可，已购买的 License 继续有效。</p>
+</section>
 
 <h2>购买步骤（3 步，人工签发，一般 24 小时内交付）</h2>
 <div class="steps">
@@ -120,7 +135,7 @@
 </details>
 <details>
   <summary>如何核对下载的安装包未被篡改？</summary>
-  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.10.dmg</code>，结果应为 <code id="sha256-faq">cff982edd55d558ec4da2f946adb249278070cac4c780a2cae61aa7f3298726e</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
+  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg</code>，结果应为 <code id="sha256-faq">67bceaf20a1f785b5a46e884f4db171ee3277bf12fb72612fa46969fee99d414</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
 </details>
 <details>
   <summary>换电脑了怎么办？</summary>
@@ -138,5 +153,36 @@
 
 <footer>SSHPro · 个人开发作品 · 问题反馈：82177657@qq.com</footer>
 </div>
+
+<script>
+// 更新记录动态覆盖：拉取失败或字段缺失时保留上方静态兜底，页面不报错。
+// 用 textContent 而非 innerHTML，避免把远端文本当 HTML 执行。
+(function () {
+  var box = document.getElementById('release-notes');
+  if (!box || !window.fetch) return;
+  fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (d) {
+      if (!d || !Array.isArray(d.notes) || d.notes.length === 0) return;
+      var ul = document.createElement('ul');
+      d.notes.forEach(function (line) {
+        var li = document.createElement('li');
+        li.textContent = String(line);
+        ul.appendChild(li);
+      });
+      box.replaceChildren(ul);
+      var v = document.getElementById('current-version');
+      var dt = document.getElementById('release-date');
+      if (v && d.version) v.textContent = String(d.version);
+      if (dt && d.releasedAt) dt.textContent = String(d.releasedAt);
+    })
+    .catch(function () {
+      /* 静态兜底已在页面里 */
+    });
+})();
+</script>
 </body>
 </html>
