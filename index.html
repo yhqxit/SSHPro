@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>购买 SSHPro — 原生 macOS SSH/SFTP 客户端</title>
+<style>
+  :root { --accent: #38E1B0; --ink: #1a1a2e; --sub: #666; --line: #e5e7eb; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; color: var(--ink); line-height: 1.7; background: #fafafa; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+  header h1 { font-size: 30px; margin-bottom: 8px; }
+  header p.sub { color: var(--sub); font-size: 16px; }
+  .price-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 28px; margin: 28px 0; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  .price { font-size: 44px; font-weight: 700; color: var(--ink); }
+  .price small { font-size: 15px; color: var(--sub); font-weight: 400; margin-left: 8px; }
+  .price-features { flex: 1; min-width: 260px; list-style: none; font-size: 14px; }
+  .download-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+  .download-card .meta { color: var(--sub); font-size: 13px; margin-top: 4px; }
+  .download-card .verify { font-size: 12px; color: var(--sub); margin-top: 6px; word-break: break-all; }
+  .download-card .verify a { color: #0d8a68; }
+  .btn { display: inline-block; background: var(--accent); color: #08251c; font-weight: 700; text-decoration: none; padding: 12px 26px; border-radius: 10px; white-space: nowrap; }
+  .btn:hover { filter: brightness(.95); }
+  .price-features li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+  h2 { font-size: 20px; margin: 36px 0 14px; }
+  .steps { counter-reset: step; }
+  .step { display: flex; gap: 14px; margin-bottom: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .step-num { flex: 0 0 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .codes { display: flex; gap: 28px; flex-wrap: wrap; margin: 18px 0; }
+  .qr { text-align: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 24px; }
+  .qr-box { width: 190px; height: 190px; border: 2px dashed #c0c4cc; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 13px; margin-bottom: 10px; background: #f5f6f8; }
+  .qr b { font-size: 15px; }
+  .qr p { font-size: 12px; color: var(--sub); margin-top: 2px; }
+  .mail-template { background: #f4f6f8; border-radius: 10px; padding: 16px 20px; font-size: 13px; font-family: ui-monospace, Menlo, monospace; white-space: pre-wrap; border: 1px solid var(--line); }
+  .notice { background: #fff8e6; border: 1px solid #f0dfa8; border-radius: 12px; padding: 16px 20px; font-size: 14px; margin: 24px 0; }
+  .notice b { color: #8a6d1a; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 20px; margin-bottom: 12px; font-size: 14px; }
+  summary { font-weight: 600; cursor: pointer; }
+  code { background: #f0f1f3; padding: 2px 6px; border-radius: 5px; font-size: 13px; font-family: ui-monospace, Menlo, monospace; }
+  footer { margin-top: 48px; color: var(--sub); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>SSHPro 购买</h1>
+  <p class="sub">原生 macOS SSH/SFTP 客户端 · Swift 原生开发 · 买断制，一次付费永久使用</p>
+</header>
+
+<div class="price-card">
+  <div class="price">¥199<small>买断 / 单台设备</small></div>
+  <ul class="price-features">
+    <li>一次付费，永久授权（无订阅）</li>
+    <li>多级 ProxyJump 跳板 + SOCKS5</li>
+    <li>SFTP 断点续传 + 目录同步/比较</li>
+    <li>密钥管理套件 + ssh-agent 管理</li>
+    <li>命令广播 / 分屏 / 服务器监控</li>
+    <li>15 天全功能免费试用，买前先试</li>
+  </ul>
+</div>
+
+<div class="download-card">
+  <div>
+    <b>先试用，再决定 · 免费下载</b>
+    <p class="meta">SSHPro <span id="dmg-version">2.4.10</span> · macOS 14+ / Apple Silicon (arm64) · <span id="dmg-size">6.6 MB</span> · 15 天全功能试用，无需注册</p>
+    <p class="verify">SHA256 <code id="sha256">cff982edd55d558ec4da2f946adb249278070cac4c780a2cae61aa7f3298726e</code> · MD5 <code id="md5">0f2162bebe1c586b282e54f77eaae7e4</code> · <a href="checksums.txt">checksums.txt</a></p>
+  </div>
+  <a id="download-btn" class="btn" href="https://yhqxit.github.io/SSHPro-Releases/dmgs/SSHPro-2.4.10.dmg">下载 DMG</a>
+</div>
+
+<h2>购买步骤（3 步，人工签发，一般 24 小时内交付）</h2>
+<div class="steps">
+  <div class="step"><div class="step-num">1</div><div><b>扫码付款</b><br>微信或支付宝扫下方二维码付款 <b>¥199</b>，付款时请备注「SSHPro + 您的邮箱」。</div></div>
+  <div class="step"><div class="step-num">2</div><div><b>发邮件提供机器码</b><br>打开 SSHPro → 菜单「帮助 → 激活 SSHPro...」，复制页面上的机器码，连同付款截图发送到邮箱 <b>82177657@qq.com</b>（App 内有「发邮件购买」按钮可自动预填）。邮件模板：</div></div>
+  <div class="step"><div class="step-num">3</div><div><b>导入 License 激活</b><br>收到回信中的 <code>SSHPro-License.json</code> 文件后，在「帮助 → 激活 SSHPro...」面板点「导入 License...」选择该文件，即完成激活。</div></div>
+</div>
+
+<div class="mail-template">收件人：82177657@qq.com
+主题：SSHPro 购买 License - 机器码 XXXXXXXX（请替换为你的机器码）
+
+你好，我已购买 SSHPro（¥199 买断），付款截图见附件。
+机器码：XXXXXXXX（请替换）
+请签发 License 文件回复到本邮箱，谢谢。</div>
+
+<h2>付款收款码</h2>
+<div class="notice" style="background:#eef7f3;border-color:#b8e3d0">
+  <b>付款前请核对（防钓鱼）：</b>
+  ① 只从官方渠道打开本页（论坛/帖子中的链接应指向本站）② 扫码后确认收款方为「<b>outworld</b>」（微信）/ 收款人姓名与官方公布一致③ 金额固定为 <b>¥199</b>，多一分少一分都不是官方收款。
+  如遇可疑页面，请先邮件联系 <b>82177657@qq.com</b> 核实。
+</div>
+<div class="codes">
+  <div class="qr">
+    <img src="qr/wechat-qr.png" width="190" height="190" alt="微信收款码"
+         onerror="this.style.display='none';document.getElementById('wx-ph').style.display='flex'">
+    <div class="qr-box" id="wx-ph" style="display:none">微信收款码<br>（收款码加载失败）</div>
+    <b>微信支付 ¥199</b><p>备注：SSHPro + 邮箱<br>若未带出金额请手动输入 199</p>
+  </div>
+  <div class="qr">
+    <img src="qr/alipay-qr.png" width="190" height="190" alt="支付宝收款码"
+         onerror="this.style.display='none';document.getElementById('ali-ph').style.display='flex'">
+    <div class="qr-box" id="ali-ph" style="display:none">支付宝收款码<br>（收款码加载失败）</div>
+    <b>支付宝 ¥199</b><p>备注：SSHPro + 邮箱<br>若未带出金额请手动输入 199</p>
+  </div>
+</div>
+
+<div class="notice">
+  <b>购买前请注意：</b>
+  本软件为个人开发者作品，采用个人收款：<b>① 不提供发票 ② 付款后不支持退款</b>（请务必先用 15 天免费试用确认满足需求再购买）③ License 与机器码绑定，一台设备一份授权。购买即表示已知晓并接受以上条款。
+</div>
+
+<h2>常见问题</h2>
+<details>
+  <summary>首次打开提示「无法验证开发者」/「已损坏」怎么办？</summary>
+  <p>本版本暂未购买 Apple 公证（费用原因），首次打开需要手动放行一次：打开终端执行 <code>xattr -cr /Applications/SSHPro.app</code>，或前往 系统设置 → 隐私与安全性，点击「仍要打开」。放行一次后不会再提示。</p>
+</details>
+<details>
+  <summary>机器码在哪里看？</summary>
+  <p>SSHPro 菜单栏「帮助 → 激活 SSHPro...」面板中部显示机器码，点「复制」即可。机器码基于硬件生成，升级/重装 macOS 都不变，原授权继续有效。</p>
+</details>
+<details>
+  <summary>如何核对下载的安装包未被篡改？</summary>
+  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.10.dmg</code>，结果应为 <code id="sha256-faq">cff982edd55d558ec4da2f946adb249278070cac4c780a2cae61aa7f3298726e</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
+</details>
+<details>
+  <summary>换电脑了怎么办？</summary>
+  <p>邮件说明情况并提供新机器码，会免费为你重签一份（原授权转入新设备）。</p>
+</details>
+
+<details>
+  <summary>升级操作系统 / 重装系统后，原授权还能用吗？</summary>
+  <p>可以。机器码基于硬件指纹（IOPlatformUUID + 机型），升级 macOS 或重装系统都不会变，原 License 文件直接继续有效，无需重新申请。只有更换电脑（硬件变化）才需要重签。</p>
+</details>
+<details>
+  <summary>换电脑了怎么办？会被反复薅羊毛吗？</summary>
+  <p>换机重签免费，但需提供原订单号（签发邮件里有）与新机器码；同一订单 <b>12 个月内最多重签 2 次</b>（写入购买条款，签发方按台账核验）。超出的特殊情况回信说明，人工评估；明显滥用可拒签或收取重签费。升级/重装系统不属于换机，无需申请。</p>
+</details>
+
+<footer>SSHPro · 个人开发作品 · 问题反馈：82177657@qq.com</footer>
+</div>
+</body>
+</html>
