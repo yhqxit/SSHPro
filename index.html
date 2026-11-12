@@ -44,6 +44,10 @@
   .release-card ul { margin: 10px 0 10px 20px; font-size: 14px; }
   .release-card li { margin-bottom: 6px; }
   .release-card a { color: #0d8a68; }
+  .help-band { background: #eef7f3; border: 1px solid #b8e3d0; border-radius: 12px; padding: 16px 22px; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; font-size: 14px; }
+  .help-band b { font-size: 15px; }
+  .help-band span { color: var(--sub); }
+  .help-band a { color: #0b6f55; font-weight: 700; text-decoration: none; white-space: nowrap; border-bottom: 1px solid #0b6f55; }
 </style>
 </head>
 <body>
@@ -69,17 +73,22 @@
 <div class="download-card">
   <div>
     <b>先试用，再决定 · 免费下载</b>
-    <p class="meta">SSHPro <span id="dmg-version">2.4.11</span> · macOS 14+ / Apple Silicon (arm64) · <span id="dmg-size">6.6 MB</span> · 15 天全功能试用，无需注册</p>
-    <p class="verify">SHA256 <code id="sha256">67bceaf20a1f785b5a46e884f4db171ee3277bf12fb72612fa46969fee99d414</code> · MD5 <code id="md5">de469d53734146ec91562a5b7eac0c09</code> · <a href="checksums.txt">checksums.txt</a></p>
+    <p class="meta">SSHPro <span id="dmg-version">2.4.11</span> · macOS 13+ / Apple Silicon (arm64) · <span id="dmg-size">6.7 MB</span> · 15 天全功能试用，无需注册</p>
+    <p class="verify">SHA256 <code id="sha256">0b2129ee888f36659ae5d66c3736158a130fdb5da9e88cf23b5c5311ddb48cdf</code> · MD5 <code id="md5">4cbf584f61f8d535cfc4cee926a96650</code> · <a href="checksums.txt">checksums.txt</a></p>
   </div>
   <a id="download-btn" class="btn" href="https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.11.dmg">下载 DMG</a>
+</div>
+
+<div class="help-band">
+  <div><b>第一次用 SSHPro？先看操作手册</b><br><span>12 章覆盖连接、多级跳板、SFTP、端口转发、密钥、授权与排错；App 内「帮助 → 使用帮助...」也能离线打开。</span></div>
+  <a href="help.html">阅读使用帮助 →</a>
 </div>
 
 <section class="release-card">
   <h2>当前版本与更新记录</h2>
   <p class="meta">当前版本 <b id="current-version">2.4.11</b> · 发布于 <span id="release-date">2026-11-12</span> · <a href="version.json">version.json</a>（供 App 自动检查更新）</p>
   <div id="release-notes">
-    <ul id="notes-fallback"><li>新增「检查更新」：启动后自动检测新版本，也可在「帮助 → 检查更新...」手动触发</li><li>发现新版本可一键下载 DMG，或选择「稍后」「跳过此版本」；升级不影响已激活的 License</li><li>购买页新增「当前版本与更新记录」区块，并公示机器可读的 version.json</li></ul>
+    <ul id="notes-fallback"><li>新增「检查更新」：启动后自动检测新版本，也可在「帮助 → 检查更新...」手动触发</li><li>发现新版本可一键下载 DMG，或选择「稍后」「跳过此版本」；升级不影响已激活的 License</li><li>购买页新增「当前版本与更新记录」区块，并公示机器可读的 version.json</li><li>新增 12 章客户操作手册：站点「使用帮助」与 App 内「帮助 → 使用帮助...」同源，手册已内置在安装包中，离线也能看</li></ul>
   </div>
   <p class="meta">已安装 SSHPro 的用户：App 启动后会自动提示新版本，也可在「帮助 → 检查更新...」手动查看。升级时把新 DMG 里的 SSHPro 拖入「应用程序」覆盖即可，已购买的 License 继续有效。</p>
 </section>
@@ -126,6 +135,10 @@
 
 <h2>常见问题</h2>
 <details>
+  <summary>有没有操作手册？多级跳板、SFTP、端口转发怎么用？</summary>
+  <p>有，共 12 章：<a href="help.html">阅读使用帮助 →</a>。也可在 App 内点「帮助 → 使用帮助...」打开内置副本，<b>不联网也能看</b>。手册覆盖连接与认证、多级 ProxyJump / SOCKS5、终端分屏与命令广播、SFTP 传输与目录同步、密钥管理、端口转发、外观与快捷键、授权激活、检查更新、排错与功能边界。</p>
+</details>
+<details>
   <summary>首次打开提示「无法验证开发者」/「已损坏」怎么办？</summary>
   <p>本版本暂未购买 Apple 公证（费用原因），首次打开需要手动放行一次：打开终端执行 <code>xattr -cr /Applications/SSHPro.app</code>，或前往 系统设置 → 隐私与安全性，点击「仍要打开」。放行一次后不会再提示。</p>
 </details>
@@ -135,7 +148,7 @@
 </details>
 <details>
   <summary>如何核对下载的安装包未被篡改？</summary>
-  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg</code>，结果应为 <code id="sha256-faq">67bceaf20a1f785b5a46e884f4db171ee3277bf12fb72612fa46969fee99d414</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
+  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg</code>，结果应为 <code id="sha256-faq">0b2129ee888f36659ae5d66c3736158a130fdb5da9e88cf23b5c5311ddb48cdf</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
 </details>
 <details>
   <summary>换电脑了怎么办？</summary>
