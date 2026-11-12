@@ -62,7 +62,7 @@
   <div class="price">¥199<small>买断 / 单台设备</small></div>
   <ul class="price-features">
     <li>一次付费，永久授权（无订阅）</li>
-    <li>多级 ProxyJump 跳板 + SOCKS5</li>
+    <li>多级 ProxyJump 跳板 + 企业 SOCKS5 网关（经授权的内网运维）</li>
     <li>SFTP 断点续传 + 目录同步/比较</li>
     <li>密钥管理套件 + ssh-agent 管理</li>
     <li>命令广播 / 分屏 / 服务器监控</li>
@@ -74,7 +74,7 @@
   <div>
     <b>先试用，再决定 · 免费下载</b>
     <p class="meta">SSHPro <span id="dmg-version">2.4.11</span> · macOS 13+ / Apple Silicon (arm64) · <span id="dmg-size">6.7 MB</span> · 15 天全功能试用，无需注册</p>
-    <p class="verify">SHA256 <code id="sha256">caccff54ff63e32b2b6c11012345db5a24d923b0dd4170e85eae657d525bc578</code> · MD5 <code id="md5">858219e00ce47d4d22cf492b947dff20</code> · <a href="checksums.txt">checksums.txt</a></p>
+    <p class="verify">SHA256 <code id="sha256">4025b3a207e2829dac08b92d0e60a19e6d3fb5ff8c3d1b65f98607ea321fb2f0</code> · MD5 <code id="md5">ffc6ca4825bfbd07745e20608b254945</code> · <a href="checksums.txt">checksums.txt</a></p>
   </div>
   <a id="download-btn" class="btn" href="https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.11.dmg">下载 DMG</a>
 </div>
@@ -84,11 +84,16 @@
   <a href="help.html">阅读使用帮助 →</a>
 </div>
 
+<div class="notice" style="background:#eef7f3;border-color:#b8e3d0">
+  <b>合规使用声明：</b>
+  SSHPro 是纯本地 SSH/SFTP 运维客户端，<b>不提供任何服务器、代理服务或国际联网信道</b>。多级跳板、企业 SOCKS5 网关接入与端口转发仅用于连接你拥有合法授权的堡垒机与内网主机；请遵守所在地法律法规，不得用于未经授权访问他人系统、规避网络监管或其他违法用途。
+</div>
+
 <section class="release-card">
   <h2>当前版本与更新记录</h2>
   <p class="meta">当前版本 <b id="current-version">2.4.11</b> · 发布于 <span id="release-date">2026-11-12</span> · <a href="version.json">version.json</a>（供 App 自动检查更新）</p>
   <div id="release-notes">
-    <ul id="notes-fallback"><li>新增「检查更新」：启动后自动检测新版本，也可在「帮助 → 检查更新...」手动触发</li><li>发现新版本可一键下载 DMG，或选择「稍后」「跳过此版本」；升级不影响已激活的 License</li><li>购买页新增「当前版本与更新记录」区块，并公示机器可读的 version.json</li><li>新增 12 章客户操作手册：站点「使用帮助」与 App 内「帮助 → 使用帮助...」同源，手册已内置在安装包中，离线也能看</li></ul>
+    <ul id="notes-fallback"><li>新增「检查更新」：启动后自动检测新版本，也可在「帮助 → 检查更新...」手动触发</li><li>发现新版本可一键下载 DMG，或选择「稍后」「跳过此版本」；升级不影响已激活的 License</li><li>购买页新增「当前版本与更新记录」区块，并公示机器可读的 version.json</li><li>新增 12 章客户操作手册：站点「使用帮助」与 App 内「帮助 → 使用帮助...」同源，手册已内置在安装包中，离线也能看</li><li>连接编辑表单输入值对齐与间距调整（界面文案不变）</li><li>合规整改：App 内功能说明、操作手册、购买页与宣传文案统一补充合规使用声明，明确仅用于经授权的内网运维、不提供服务器／代理服务／国际联网信道；功能与能力不变</li></ul>
   </div>
   <p class="meta">已安装 SSHPro 的用户：App 启动后会自动提示新版本，也可在「帮助 → 检查更新...」手动查看。升级时把新 DMG 里的 SSHPro 拖入「应用程序」覆盖即可，已购买的 License 继续有效。</p>
 </section>
@@ -136,7 +141,11 @@
 <h2>常见问题</h2>
 <details>
   <summary>有没有操作手册？多级跳板、SFTP、端口转发怎么用？</summary>
-  <p>有，共 12 章：<a href="help.html">阅读使用帮助 →</a>。也可在 App 内点「帮助 → 使用帮助...」打开内置副本，<b>不联网也能看</b>。手册覆盖连接与认证、多级 ProxyJump / SOCKS5、终端分屏与命令广播、SFTP 传输与目录同步、密钥管理、端口转发、外观与快捷键、授权激活、检查更新、排错与功能边界。</p>
+  <p>有，共 12 章：<a href="help.html">阅读使用帮助 →</a>。也可在 App 内点「帮助 → 使用帮助...」打开内置副本，<b>不联网也能看</b>。手册覆盖连接与认证、多级 ProxyJump / 企业 SOCKS5 网关（经授权的内网运维）、终端分屏与命令广播、SFTP 传输与目录同步、密钥管理、端口转发、合规使用声明、授权激活、检查更新、排错与功能边界。</p>
+</details>
+<details>
+  <summary>SSHPro 是代理 / VPN 工具吗？会提供服务器或国际联网信道吗？</summary>
+  <p>都不是。SSHPro 是<b>纯本地客户端</b>，不提供服务器、代理服务或国际联网信道，所有连接都由你使用自己的账号与凭据发起，目标主机由你自己配置。多级跳板（ProxyJump）、企业 SOCKS5 网关接入与端口转发仅面向<b>经授权的企业内网运维</b>场景（例如访问堡垒机之后的内网服务器）；请勿用于任何未经授权或违反所在地法律法规的用途。</p>
 </details>
 <details>
   <summary>首次打开提示「无法验证开发者」/「已损坏」怎么办？</summary>
@@ -148,7 +157,7 @@
 </details>
 <details>
   <summary>如何核对下载的安装包未被篡改？</summary>
-  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg</code>，结果应为 <code id="sha256-faq">caccff54ff63e32b2b6c11012345db5a24d923b0dd4170e85eae657d525bc578</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
+  <p>终端执行 <code id="shasum-cmd">shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg</code>，结果应为 <code id="sha256-faq">4025b3a207e2829dac08b92d0e60a19e6d3fb5ff8c3d1b65f98607ea321fb2f0</code>；也可点页面上方「checksums.txt」核对 SHA256 与 MD5。若不一致请勿安装，并邮件联系核实。</p>
 </details>
 <details>
   <summary>换电脑了怎么办？</summary>
