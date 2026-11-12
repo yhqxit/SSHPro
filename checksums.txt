@@ -2,9 +2,9 @@ SSHPro 2.4.11 — 官方安装包校验值
 下载直链：https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.11.dmg
 
 文件   : SSHPro-2.4.11.dmg
-大小   : 6656054 bytes
-SHA256 : 0b2129ee888f36659ae5d66c3736158a130fdb5da9e88cf23b5c5311ddb48cdf
-MD5    : 4cbf584f61f8d535cfc4cee926a96650
+大小   : 6656015 bytes
+SHA256 : caccff54ff63e32b2b6c11012345db5a24d923b0dd4170e85eae657d525bc578
+MD5    : 858219e00ce47d4d22cf492b947dff20
 
 核对命令：
   shasum -a 256 ~/Downloads/SSHPro-2.4.11.dmg
