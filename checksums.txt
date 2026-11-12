@@ -1,5 +1,4 @@
 SSHPro 2.4.10 — 官方安装包校验值
-生成时间：2026-11-12 09:22:41 +0800
 下载直链：https://yhqxit.github.io/sshpro/dmgs/SSHPro-2.4.10.dmg
 
 文件   : SSHPro-2.4.10.dmg
